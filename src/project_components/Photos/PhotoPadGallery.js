@@ -20,6 +20,8 @@ class PhotoPadGallery extends Component {
 
     componentDidMount() {
         this.props.getPhotos();
+        console.log(localStorage.userEmail);
+        console.log(this.props);
     }
 
     deletePhoto = (photoId, photoLink) => {

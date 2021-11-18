@@ -22,7 +22,6 @@ export const authenticateUser = (credentials) => {
 export const addUser = (newUser) => {
     return dispatch => {
         dispatch(registerRequest());
-        console.log(newUser.fname);
         axios.post("http://localhost:8095/v1/c1/addNewUser", newUser)
             .then(res => {
                 dispatch({
@@ -48,6 +47,7 @@ export const logoutUser = (logoutUser) => {
             type: AT.LOGOUT_REQUEST
         });
         localStorage.removeItem('access_key');
+        localStorage.removeItem('userEmail');
         dispatch(success(false));
     };
 };

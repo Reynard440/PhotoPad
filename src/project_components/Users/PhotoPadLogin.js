@@ -1,9 +1,10 @@
 import React, {Component} from 'react';
-import {Alert, Button, Card, Col, Form, Row, Toast} from 'react-bootstrap';
+import {Alert, Button, Card, Col, Form, Row} from 'react-bootstrap';
 import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
 import {faSignInAlt, faUndo} from "@fortawesome/free-solid-svg-icons";
 import {connect} from "react-redux";
 import {authenticateUser} from "../services/index";
+import PhotoPadToast from "../Photos/PhotoPadToast";
 
 class PhotoPadLogin extends Component {
     constructor(props){
@@ -49,13 +50,8 @@ class PhotoPadLogin extends Component {
         const {email, password, error} = this.state;
         return (
             <div>
-                <div style={{"display": this.state.loggedIn ? "block": "none"}}>
-                    <Toast className={"bg-success"} show={this.state.loggedIn}>
-                        <Toast.Header className={"text-dark"}>
-                            <strong className="me-auto">Successful Login</strong>
-                        </Toast.Header>
-                        <Toast.Body className={"text-white"}>Valid email and password, successful login.</Toast.Body>
-                    </Toast>
+                <div style={{ "display": this.state.loggedIn ? "block" : "none" }}>
+                    <PhotoPadToast show={this.state.show} message={"Successful Login."} type={"success"}/>
                 </div>
                 <Row className="justify-content-sm-center">
                     <Col lg={5}>

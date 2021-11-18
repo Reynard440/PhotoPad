@@ -60,8 +60,9 @@ class PhotoPadEdit extends Component {
         this.props.updatePhoto(bodyInfo);
         setTimeout(() => {
             if (this.props.updatedPhotoObj.error === '') {
-                this.setState({"show": true, "method":"put"});
-                setTimeout(() => this.setState({"show": false}), 3000);
+                this.setState({ "show": true, "method": "put" });
+                console.log(this.state);
+                setTimeout(() => this.setState({"show": true}), 3000);
                 this.setState(this.initialState);
                 setTimeout(() => this.photoCollection(), 3000);
             } else {
