@@ -1,54 +1,54 @@
-body{
-    background: url("./background.jpg") no-repeat center center fixed;
-    -webkit-background-size: cover;
-    -moz-background-size: cover;
-    -o-background-size: cover;
-    background-size: cover;
-    font-family: "Font Awesome 5 Free", "HP Simplified";
-    font-size: large;
+body {
+  background: url("./background.jpg") no-repeat center center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  font-family: "Font Awesome 5 Free", "HP Simplified";
+  font-size: large;
 }
 
 .imageDisplay {
-    max-width: 150px;
-    max-height: 150px;
-    position: relative;
+  max-width: 150px;
+  max-height: 150px;
+  position: relative;
 }
 
 .grouping {
-    display: inline-block;
-    text-align: center;
-    align-items: center;
-    margin-bottom: 5px;
-    margin-right: 2px;
-    padding: 0.05rem;
+  display: inline-block;
+  text-align: center;
+  align-items: center;
+  margin-bottom: 5px;
+  margin-right: 2px;
+  padding: 0.05rem;
 }
 
 .galleryMain {
-    text-align: center;
-    align-items: center;
-    margin-bottom: 60px;
-    margin-top: 20px;
+  text-align: center;
+  align-items: center;
+  margin-bottom: 20px;
+  margin-top: 10px;
 }
 
 .listMain {
-    text-align: left;
-    margin-bottom: 60px;
-    margin-top: 20px;
+  text-align: left;
+  margin-bottom: 20px;
+  margin-top: 20px;
 }
 
-.registerMain{
-    align-items: center;
-    margin-top: 40px;
-    margin-bottom: 10px;
+.registerMain {
+  align-items: center;
+  margin-top: 20px;
+  margin-bottom: 40px;
 }
 
 .galleryCard {
-    width: 100%;
+  width: 100%;
 }
 
 .containerImage {
-    width: 250px;
-    height: 250px;
+  width: 250px;
+  height: 250px;
 }
 
 /*.containerImage:hover {*/
@@ -60,7 +60,7 @@ body{
 /*}*/
 
 .divText {
-    text-align: left;
+  text-align: left;
 }
 
 /*.overlay {*/

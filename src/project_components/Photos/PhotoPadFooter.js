@@ -11,7 +11,7 @@ export default function PhotoPadFooter() {
     }, [fullYear]);
 
     return (
-        <Navbar fixed="bottom" bg="primary" variant="light">
+        <Navbar fixed="bottom" style={{"backgroundColor": "#4f473e"}} variant="light">
             <Container>
                 <Col md={12} className="text-center text-white" sm={12}>
                     <div>

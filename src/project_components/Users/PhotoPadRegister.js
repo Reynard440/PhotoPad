@@ -67,7 +67,7 @@ class PhotoPadRegister extends Component {
                             <FontAwesomeIcon icon={faKey}/>  Register
                         </Card.Header>
                         <Card.Body>
-                            <Form onReset={this.resetRegister} onSubmit={this.createNewUser} controlId="registerForm">
+                            <Form onReset={this.resetRegister} onSubmit={this.createNewUser}>
                                 <Form.Group className="mb-1">
                                     <Form.Label><FontAwesomeIcon icon={faAddressBook}/> Email address</Form.Label>
                                     <Form.Control type="email" name="email" value={email} onChange={this.detailsChange}  className={"bg-white text-dark"} placeholder="Enter email here" />

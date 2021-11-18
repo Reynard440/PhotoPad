@@ -1,10 +1,9 @@
 import React, {Component} from 'react';
-import {Alert, Button, Card, Col, Form, Row} from 'react-bootstrap';
+import {Alert, Button, Card, Col, Form, Row, Toast} from 'react-bootstrap';
 import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
 import {faSignInAlt, faUndo} from "@fortawesome/free-solid-svg-icons";
 import {connect} from "react-redux";
 import {authenticateUser} from "../services/index";
-import PhotoPadToast from "../Photos/PhotoPadToast";
 
 class PhotoPadLogin extends Component {
     constructor(props){
@@ -33,12 +32,12 @@ class PhotoPadLogin extends Component {
         setTimeout(() => {
             if (this.props.auth.isLoggedIn) {
                 this.setState({"loggedIn": true});
-                setTimeout(() => {this.setState({"loggedIn": false});return this.props.history.push("/");}, 2000);
+                setTimeout(() => {this.setState({"loggedIn": false});return this.props.history.push("/");}, 3000);
             } else {
                 this.resetPhotoPadLoginForm();
                 this.setState({"error": "Invalid email and password"});
             }
-        }, 1500);
+        }, 500);
         this.resetPhotoPadLoginForm();
     };
 
@@ -51,7 +50,12 @@ class PhotoPadLogin extends Component {
         return (
             <div>
                 <div style={{"display": this.state.loggedIn ? "block": "none"}}>
-                    <PhotoPadToast show={this.state.loggedIn} message={"Valid email and password, success."} type={"validUser"}/>
+                    <Toast className={"bg-success"} show={this.state.loggedIn}>
+                        <Toast.Header className={"text-dark"}>
+                            <strong className="me-auto">Successful Login</strong>
+                        </Toast.Header>
+                        <Toast.Body className={"text-white"}>Valid email and password, successful login.</Toast.Body>
+                    </Toast>
                 </div>
                 <Row className="justify-content-sm-center">
                     <Col lg={5}>

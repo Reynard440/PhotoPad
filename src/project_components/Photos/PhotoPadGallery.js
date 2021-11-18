@@ -43,6 +43,10 @@ class PhotoPadGallery extends Component {
         window.open("http://localhost:8095/v1/c4/downloadPhoto/" + localStorage.userEmail + "/"+photoLink);
     };
 
+    viewPhoto = (photoLink) => {
+        window.open("http://localhost:8095/v1/c4/displayPhoto/" + localStorage.userEmail + "/" + photoLink + "/");
+    }
+
     render() {
         const photoData = this.props.photoData;
         const photos = photoData.photos;
@@ -79,7 +83,7 @@ class PhotoPadGallery extends Component {
                                                     </div>
                                                 </CardHeader>
                                                 <Card.Img src={`http://localhost:8095/v1/c4/displayPhoto/` + localStorage.userEmail + `/` + photo.photoLink + `/`}
-                                                          className={"containerImage"} alt={"default"}/>
+                                                    className={"containerImage"} alt={"default"} onClick={this.viewPhoto.bind(this, photo.photoLink)}/>
                                                 <Card.Body className={"bg-light"}>
                                                     <div className={"divText"}><strong>Name:</strong>
                                                         <div className="float-end">
