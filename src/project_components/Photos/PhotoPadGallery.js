@@ -60,7 +60,7 @@ class PhotoPadGallery extends Component {
                 </div>
                 <div className={"galleryMain"}>
                     <Card className={"border border-dark bg-white text-dark galleryCard"}>
-                        <CardHeader className={"bg-white text-dark"} style={{textAlign: 'left'}}><FontAwesomeIcon icon={faImages}/> Your Gallery of Photos {'  '}
+                        <CardHeader className={"bg-white text-dark"} style={{textAlign: 'left'}}><FontAwesomeIcon icon={faImages}/> Your Collection of Photos {'  '}
                             <Link to={"add"} className="btn btn-sm btn-outline-primary float-end" ><FontAwesomeIcon icon={faSave}/> Add Photo</Link>
                         </CardHeader>
                         {photoData.photos.length === 0 || this.state.photos.confirmation === true ?

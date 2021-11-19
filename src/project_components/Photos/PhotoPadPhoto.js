@@ -43,7 +43,7 @@ class PhotoPadPhoto extends Component {
 
         this.props.savePhoto(bodyInfo);
         setTimeout(() => {
-            if (this.props.savedPhotoObj.photo != null) {
+            if (this.props.savedPhotoObj.photo !== null) {
                 this.setState({"show": true, "method":"post"});
                 setTimeout(() => this.setState({"show": true}), 3000);
                 this.setState(this.initialState);
