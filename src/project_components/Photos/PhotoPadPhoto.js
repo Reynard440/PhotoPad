@@ -43,21 +43,21 @@ class PhotoPadPhoto extends Component {
 
         this.props.savePhoto(bodyInfo);
         setTimeout(() => {
-            if (this.props.savedPhotoObj.photo !== null) {
+            if (this.props.savedPhotoObj.photos !== '') {
                 this.setState({"show": true, "method":"post"});
                 setTimeout(() => this.setState({"show": true}), 3000);
                 this.setState(this.initialState);
                 setTimeout(() => this.photoCollection(), 3000);
             } else {
-                this.setState({"show": false});
+                this.setState({ "show": false });
                 if (this.props.savedPhotoObj.error.response.status === 403) {
                     this.setState({"isFourHundred":false});
                     this.setState({"unsupportedFileType" : true, "method":"post"});
-                    setTimeout(() => this.setState({"unsupportedFileType": false}), 4000);
+                    setTimeout(() => this.setState({ "unsupportedFileType": false }), 4000);
                 } else if (this.props.savedPhotoObj.error.response.status === 400) {
                     this.setState({"unsupportedFileType":false});
                     this.setState({"isFourHundred" : true, "method":"post"});
-                    setTimeout(() => this.setState({"isFourHundred": false}), 4000);
+                    setTimeout(() => this.setState({ "isFourHundred": false }), 4000);
                 }
             }
         }, 1500);
