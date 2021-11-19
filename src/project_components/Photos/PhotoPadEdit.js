@@ -11,14 +11,12 @@ class PhotoPadEdit extends Component {
     constructor(props) {
         super(props);
         this.state = this.initialState;
-        this.state.show = false;
-        this.state.accessErrorShow = false;
         this.photoChanged = this.photoChanged.bind(this);
         this.updatePhoto = this.updatePhoto.bind(this);
     }
 
     initialState = {
-        photoId:'', ph_name:'', location:'', ph_captured:''
+        photoId:'', ph_name:'', location:'', ph_captured:'', show:false, accessErrorShow:false
     };
 
     componentDidMount() {
@@ -60,10 +58,10 @@ class PhotoPadEdit extends Component {
         this.props.updatePhoto(bodyInfo);
         setTimeout(() => {
             if (this.props.updatedPhotoObj.error === '') {
-                this.setState({ "show": true, "method": "put" });
-                console.log(this.state);
+                this.setState({ "show": true, "method": "post" });
+                console.log(this.props);
                 setTimeout(() => this.setState({"show": true}), 3000);
-                this.setState(this.initialState);
+                // this.setState(this.initialState);
                 setTimeout(() => this.photoCollection(), 3000);
             } else {
                 this.setState({"show": false});
@@ -88,14 +86,14 @@ class PhotoPadEdit extends Component {
     };
 
     render() {
-        const {ph_name, location, ph_captured} = this.state;
+        const {ph_name, location, ph_captured, show, accessErrorShow} = this.state;
         return (
             <div>
-                <div style={{"display": this.state.show ? "block": "none"}}>
-                    <PhotoPadToast show={this.state.show} message={"Photo updated, you can now share it with the group."} type={"success"}/>
+                <div style={{"display": this.show ? "block": "none"}}>
+                    <PhotoPadToast show={this.show} message={"Photo updated, you can now share it with the group."} type={"success"}/>
                 </div>
-                <div style={{"display": this.state.accessErrorShow ? "block": "none"}}>
-                    <PhotoPadToast show={this.state.accessErrorShow} message={"Access Required, please consult with the owner."} type={"ad"}/>
+                <div style={{"display": this.accessErrorShow ? "block": "none"}}>
+                    <PhotoPadToast show={this.accessErrorShow} message={"Access Required, please consult with the owner."} type={"ad"}/>
                 </div>
                 <Card className={"border border-white bg-white text-dark"}>
                     <CardHeader><FontAwesomeIcon icon={faPlusSquare}/> Update a Photo</CardHeader>

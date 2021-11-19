@@ -33,7 +33,7 @@ class PhotoPadLogin extends Component {
         setTimeout(() => {
             if (this.props.auth.isLoggedIn) {
                 this.setState({"loggedIn": true});
-                setTimeout(() => {this.setState({"loggedIn": false});return this.props.history.push("/");}, 3000);
+                setTimeout(() => {this.setState({"loggedIn": true});return this.props.history.push("/");}, 3000);
             } else {
                 this.resetPhotoPadLoginForm();
                 this.setState({"error": "Invalid email and password"});
@@ -55,7 +55,6 @@ class PhotoPadLogin extends Component {
                 </div>
                 <Row className="justify-content-sm-center">
                     <Col lg={5}>
-                        {this.props.message && <Alert variant="success">{this.props.message}</Alert>}
                         {error && <Alert variant="danger">{error}</Alert>}
                         <Card className={"border border-white bg-white text-dark"}>
                             <Card.Header>

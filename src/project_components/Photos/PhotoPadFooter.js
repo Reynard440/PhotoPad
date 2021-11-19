@@ -15,7 +15,7 @@ export default function PhotoPadFooter() {
             <Container>
                 <Col md={12} className="text-center text-white" sm={12}>
                     <div>
-                        <FontAwesomeIcon icon={faAt}/>All Rights Reserved by PhotoPad, {fullYear} - {fullYear+1}
+                        {fullYear} - {fullYear+1} <FontAwesomeIcon icon={faAt}/> All Rights Reserved by PhotoPad
                     </div>
                 </Col>
             </Container>

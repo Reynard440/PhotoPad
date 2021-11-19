@@ -59,7 +59,7 @@ class PhotoPadSharePhoto extends Component {
                 }
             })
             .then(res => {
-                if (res.data != null && res.data.status === 200) {
+                if (res.data.confirmation === true && res.data.cargo === 'Photo shared') {
                     this.setState({"show": true, "method":"post"});
                     setTimeout(() => this.setState({"show": false}), 3000);
                     setTimeout(() => this.photoCollection(), 3000);
@@ -126,8 +126,7 @@ class PhotoPadSharePhoto extends Component {
                                         <Form.Control type="text" name="photoId" value={photoId} onChange={this.detailsChanged} required autoComplete="off" placeholder="Enter the id of the photo here" className={"bg-white text-dark"} disabled />
                                     </Form.Group>
                                     <Form.Group as={Col} controlId="formGridPhotoAccessRights"><Form.Label>Photo Access Rights</Form.Label>
-
-                                        <Form.Check type="checkbox" name="ph_access" value={ph_access} onChange={this.detailsChanged} required autoComplete="off" className={"bg-white text-dark"} />
+                                        <Form.Check type="checkbox" name="ph_access" value={ph_access} onChange={this.detailsChanged} required autoComplete="off" className={"bg-white text-dark"} /><Form.Label>Give full delete, edit access?</Form.Label>
                                     </Form.Group>
                                 </Card.Body>
                                 <Card.Footer style={{ "textAlign":"right" }}>
