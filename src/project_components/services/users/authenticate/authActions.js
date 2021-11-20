@@ -6,7 +6,7 @@ export const authenticateUser = (credentials) => {
         dispatch({
             type: AT.LOGIN_REQUEST
         });
-        axios.post("http://localhost:8095/v1/c1/login", credentials)
+        axios.post("http://photomemories.us-east-1.elasticbeanstalk.com/v1/c1/login", credentials)
             .then(res => {
                 let access_key = res.data.access_token;
                 localStorage.setItem('access_key', "Carrier " + access_key);
@@ -22,7 +22,7 @@ export const authenticateUser = (credentials) => {
 export const addUser = (newUser) => {
     return dispatch => {
         dispatch(registerRequest());
-        axios.post("http://localhost:8095/v1/c1/addNewUser", newUser)
+        axios.post("http://photomemories.us-east-1.elasticbeanstalk.com/v1/c1/addNewUser", newUser)
             .then(res => {
                 dispatch({
                     type: AT.SUCCESS,

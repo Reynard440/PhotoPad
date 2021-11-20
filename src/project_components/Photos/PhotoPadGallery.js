@@ -40,11 +40,11 @@ class PhotoPadGallery extends Component {
     };
 
     downloadPhoto = (photoLink) => {
-        window.open("http://localhost:8095/v1/c4/downloadPhoto/" + localStorage.userEmail + "/"+photoLink);
+        window.open("http://photomemories.us-east-1.elasticbeanstalk.com/v1/c4/downloadPhoto/" + localStorage.userEmail + "/"+photoLink);
     };
 
     viewPhoto = (photoLink) => {
-        window.open("http://localhost:8095/v1/c4/displayPhoto/" + localStorage.userEmail + "/" + photoLink + "/");
+        window.open("http://photomemories.us-east-1.elasticbeanstalk.com/v1/c4/displayPhoto/" + localStorage.userEmail + "/" + photoLink + "/");
     }
 
     render() {
@@ -75,7 +75,7 @@ class PhotoPadGallery extends Component {
                                                 <CardHeader className="bg-light">
                                                     <div className={"divText"}><strong>ID:</strong> {photo.photoId}</div>
                                                 </CardHeader>
-                                                <Card.Img src={`http://localhost:8095/v1/c4/displayPhoto/` + localStorage.userEmail + `/` + photo.photoLink + `/`}
+                                                <Card.Img src={`http://photomemories.us-east-1.elasticbeanstalk.com/v1/c4/displayPhoto/` + localStorage.userEmail + `/` + photo.photoLink + `/`}
                                                     className={"containerImage"} style={{"objectFit":"contain"}} alt={"default"} onClick={this.viewPhoto.bind(this, photo.photoLink)}/>
                                                 <Card.Body className={"bg-light"}>
                                                     <div className={"divText"}><strong>Name:</strong>

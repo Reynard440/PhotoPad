@@ -4,7 +4,7 @@ import axios from 'axios';
 export const savePhoto = photo => {
   return dispatch => {
       dispatch(savePhotoRequest());
-      axios.post("http://localhost:8095/v1/c2/addNewPhoto", photo,
+      axios.post("http://photomemories.us-east-1.elasticbeanstalk.com/v1/c2/addNewPhoto", photo,
           {
               headers:{
                   "Access-Control-Allow-Origin": "*",
@@ -36,7 +36,7 @@ const updatePhotoRequest = () => {
 export const updatePhoto = photo => {
     return dispatch => {
         dispatch(updatePhotoRequest());
-        axios.put("http://localhost:8095/v1/c2/updateMetadata/" + photo.get("photoId"), photo,
+        axios.put("http://photomemories.us-east-1.elasticbeanstalk.com/v1/c2/updateMetadata/" + photo.get("photoId"), photo,
             {
                 headers:{
                     "Access-Control-Allow-Origin": "*",
@@ -62,7 +62,7 @@ const getPhotoRequest = () => {
 export const getPhoto = photoId => {
     return dispatch => {
         dispatch(getPhotoRequest());
-        axios.get("http://localhost:8095/v1/c2/getPhotoById/" + photoId,
+        axios.get("http://photomemories.us-east-1.elasticbeanstalk.com/v1/c2/getPhotoById/" + photoId,
             {
                 headers:{
                     "Access-Control-Allow-Origin": "*",
@@ -88,7 +88,7 @@ const deletePhotoRequest = () => {
 export const deletePhoto = (photoId, photoLink) => {
     return dispatch => {
         dispatch(deletePhotoRequest());
-        axios.delete("http://localhost:8095/v1/c2/deletePhoto/"+photoLink + "/" + localStorage.userEmail + "/" + photoId,
+        axios.delete("http://photomemories.us-east-1.elasticbeanstalk.com/v1/c2/deletePhoto/"+photoLink + "/" + localStorage.userEmail + "/" + photoId,
             {
                 headers:{
                     "Access-Control-Allow-Origin": "*",

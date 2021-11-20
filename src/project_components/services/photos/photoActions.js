@@ -4,7 +4,7 @@ import axios from 'axios';
 export const getPhotos = () => {
     return dispatch => {
         dispatch(getPhotosRequest());
-        axios.get("http://localhost:8095/v1/c2/loadAllPhotosOfUser/"+localStorage.userEmail+"/",
+        axios.get("http://photomemories.us-east-1.elasticbeanstalk.com/v1/c2/loadAllPhotosOfUser/"+localStorage.userEmail+"/",
             {
                 headers:{
                     "Access-Control-Allow-Origin": "*",

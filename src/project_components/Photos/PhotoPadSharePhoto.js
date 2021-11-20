@@ -51,7 +51,7 @@ class PhotoPadSharePhoto extends Component {
         bodyInfo.append("id", this.state.photoId);
         bodyInfo.append("sharingEmail", localStorage.userEmail);
 
-        axios.post("http://localhost:8095/v1/c2/sharePhotoWithAnotherUser", bodyInfo,
+        axios.post("http://photomemories.us-east-1.elasticbeanstalk.com/v1/c2/sharePhotoWithAnotherUser", bodyInfo,
             {
                 headers:{
                     "Access-Control-Allow-Origin": "*",
