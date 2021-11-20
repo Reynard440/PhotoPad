@@ -55,7 +55,7 @@ class PhotoPadLogin extends Component {
                 </div>
                 <Row className="justify-content-sm-center">
                     <Col lg={5}>
-                        {error && <Alert variant="danger">{error}</Alert>}
+                        {error!=='' && <Alert variant="danger">{error}</Alert>}
                         <Card className={"border border-white bg-white text-dark"}>
                             <Card.Header>
                                 <FontAwesomeIcon icon={faSignInAlt}/>  Login
