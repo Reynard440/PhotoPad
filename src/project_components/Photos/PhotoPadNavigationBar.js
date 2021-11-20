@@ -44,7 +44,7 @@ class PhotoPadNavigationBar extends Component {
                     <Navbar.Toggle aria-controls="basic-navbar-nav" />
                     <Navbar.Collapse id="basic-navbar-nav">
                         <Nav className="mr-auto">
-                            {this.props.auth.isLoggedIn ? loggedInLinks : notLoggedInLinks}
+                            {this.props.auth.isLoggedIn===true ? loggedInLinks : notLoggedInLinks}
                         </Nav>
                     </Navbar.Collapse>
                 </Container>
