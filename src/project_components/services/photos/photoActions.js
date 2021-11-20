@@ -7,7 +7,6 @@ export const getPhotos = () => {
         axios.get("http://photomemories.us-east-1.elasticbeanstalk.com/v1/c2/loadAllPhotosOfUser/"+localStorage.userEmail+"/",
             {
                 headers:{
-                    "Access-Control-Allow-Origin": "*",
                     "Authorization": localStorage.access_key
                 }
             })

@@ -7,7 +7,6 @@ export const savePhoto = photo => {
       axios.post("http://photomemories.us-east-1.elasticbeanstalk.com/v1/c2/addNewPhoto", photo,
           {
               headers:{
-                  "Access-Control-Allow-Origin": "*",
                   "Authorization": localStorage.access_key
               }
           })
@@ -39,7 +38,6 @@ export const updatePhoto = photo => {
         axios.put("http://photomemories.us-east-1.elasticbeanstalk.com/v1/c2/updateMetadata/" + photo.get("photoId"), photo,
             {
                 headers:{
-                    "Access-Control-Allow-Origin": "*",
                     "Authorization": localStorage.access_key
                 }
             })
@@ -65,7 +63,6 @@ export const getPhoto = photoId => {
         axios.get("http://photomemories.us-east-1.elasticbeanstalk.com/v1/c2/getPhotoById/" + photoId,
             {
                 headers:{
-                    "Access-Control-Allow-Origin": "*",
                     "Authorization": localStorage.access_key
                 }
             })
@@ -91,7 +88,6 @@ export const deletePhoto = (photoId, photoLink) => {
         axios.delete("http://photomemories.us-east-1.elasticbeanstalk.com/v1/c2/deletePhoto/"+photoLink + "/" + localStorage.userEmail + "/" + photoId,
             {
                 headers:{
-                    "Access-Control-Allow-Origin": "*",
                     "Authorization": localStorage.access_key
                 }
             })
