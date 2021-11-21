@@ -50,6 +50,7 @@ class PhotoPadPhoto extends Component {
                 setTimeout(() => this.photoCollection(), 3000);
             } else {
                 this.setState({ "show": false });
+                console.log(this.props.savedPhotoObj.error.response);
                 if (this.props.savedPhotoObj.error.response.status === 403) {
                     this.setState({"isFourHundred":false});
                     this.setState({"unsupportedFileType" : true, "method":"post"});

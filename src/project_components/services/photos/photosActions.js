@@ -8,7 +8,8 @@ export const savePhoto = photo => {
           {
               headers: {
                   "Access-Control-Allow-Origin": "*",
-                  "Authorization": localStorage.access_key
+                  "Authorization": localStorage.access_key,
+                    "Content-Type": "multipart/form-data"
               }
           })
           .then(res => {
