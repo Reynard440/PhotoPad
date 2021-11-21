@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import {Alert, Button, Card, Col, Form, Row} from 'react-bootstrap';
+import {Button, Card, Col, Form, Row} from 'react-bootstrap';
 import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
 import {faSignInAlt, faUndo} from "@fortawesome/free-solid-svg-icons";
 import {connect} from "react-redux";
@@ -11,6 +11,7 @@ class PhotoPadLogin extends Component {
         super(props);
         this.state = this.initialState;
         this.state.loggedIn = false;
+        this.state.invalidShow = false
         this.detailsChange = this.detailsChange.bind(this);
     }
 
@@ -36,7 +37,9 @@ class PhotoPadLogin extends Component {
                 setTimeout(() => {this.setState({"loggedIn": true});return this.props.history.push("/");}, 3000);
             } else {
                 this.resetPhotoPadLoginForm();
-                this.setState({"error": "Invalid email and password"});
+                this.setState({ "error": "Invalid Email and Password" });
+                this.setState({ "invalidShow": true });
+                setTimeout(() => { this.setState({ "invalidShow": false });}, 3000);
             }
         }, 500);
         this.resetPhotoPadLoginForm();
@@ -53,9 +56,11 @@ class PhotoPadLogin extends Component {
                 <div style={{ "display": this.state.loggedIn ? "block" : "none" }}>
                     <PhotoPadToast show={this.state.show} message={"Successful Login."} type={"success"}/>
                 </div>
+                <div style={{ "display": this.state.invalidShow ? "block" : "none" }}>
+                    <PhotoPadToast show={this.state.invalidShow} message={error} type={"danger"}/>
+                </div>
                 <Row className="justify-content-sm-center">
                     <Col lg={5}>
-                        {error && <Alert variant="danger">{error}</Alert>}
                         <Card className={"border border-white bg-white text-dark"}>
                             <Card.Header>
                                 <FontAwesomeIcon icon={faSignInAlt}/>  Login

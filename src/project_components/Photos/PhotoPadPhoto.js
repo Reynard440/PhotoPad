@@ -93,7 +93,7 @@ class PhotoPadPhoto extends Component {
                     <PhotoPadToast show={this.state.isFourHundred} message={"Ensure that the provided information is correct."} type={"400"}/>
                 </div>
                 <Card className={"border border-white bg-white text-dark"}>
-                    <CardHeader><FontAwesomeIcon icon={faPlusSquare}/> {this.state.photoId ? "Update a Photo":"Add a Photo"}</CardHeader>
+                    <CardHeader><FontAwesomeIcon icon={faPlusSquare}/> {this.state.photoId ? "Update a Photo":"Add a Photo, All Fields are Required"}</CardHeader>
                     <Form onReset={this.clearAllFields} onSubmit={this.addPhoto} id={"photoForm"}>
                         <Card.Body>
                             <Row>

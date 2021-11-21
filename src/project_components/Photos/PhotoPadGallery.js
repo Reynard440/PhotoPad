@@ -60,19 +60,19 @@ class PhotoPadGallery extends Component {
                 </div>
                 <div className={"galleryMain"}>
                     <Card className={"border border-dark bg-white text-dark galleryCard"}>
-                        <CardHeader className={"bg-white text-dark"} style={{textAlign: 'left'}}><FontAwesomeIcon icon={faImages}/> Your Collection of Photos {'  '}
+                        <CardHeader className={"text-dark"} style={{textAlign: 'left'}}><FontAwesomeIcon icon={faImages}/> Your Collection of Photos {'  '}
                             <Link to={"add"} className="btn btn-sm btn-outline-primary float-end" ><FontAwesomeIcon icon={faSave}/> Add Photo</Link>
                         </CardHeader>
                         {photoData.photos.length === 0 || this.state.photos.confirmation === true ?
                             <Card.Body>
                                 No Current Photos To Display for: {localStorage.userEmail}
                             </Card.Body> :
-                            <Card.Body>
+                            <Card.Body style={{"backgroundColor":"#333438"}}>
                                 <div>
                                     {photos.map((photo) => (
                                         <div key={photo.photoId} className={"grouping"}>
                                             <Card>
-                                                <CardHeader className="bg-light">
+                                                <CardHeader >
                                                     <div className={"divText"}><strong>ID:</strong> {photo.photoId}</div>
                                                 </CardHeader>
                                                 <Card.Img src={`http://photomemories.us-east-1.elasticbeanstalk.com/v1/c4/displayPhoto/` + localStorage.userEmail + `/` + photo.photoLink + `/`}

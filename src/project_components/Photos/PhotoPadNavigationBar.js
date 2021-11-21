@@ -36,7 +36,7 @@ class PhotoPadNavigationBar extends Component {
             </>
         );
         return (
-            <Navbar style={{"backgroundColor": "#4f473e"}} variant="dark" expand="lg">
+            <Navbar style={{"backgroundColor": "#47403d"}} variant="dark" expand="lg">
                 <Container fluid>
                     <Link to={""} className="navbar-brand">
                         <img src={logo} height="20" width="100" style={{"marginLeft":"10px"}} alt={logo}/>
